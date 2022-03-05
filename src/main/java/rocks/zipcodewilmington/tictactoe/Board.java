@@ -125,10 +125,7 @@ public class Board {
     }
 
     public String getWinner() {
-        Character [] [] ticTacToe1 = new Character [3][3];
-        ticTacToe1 [0][0] = 'O'; ticTacToe1 [0][1] = 'O'; ticTacToe1 [0][2] = 'O';
-        //String result =
-        return "" ;
+        //one or the other has to get 3 in a row to win the game.
     }
 
 }
