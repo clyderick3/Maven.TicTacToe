@@ -12,19 +12,123 @@ public class Board {
     }
 
     public Boolean isInFavorOfX() {
-        return 'X' <= '0';
+        //looking for three x's in a row.
+
+    int favorX = 0;
+    if (matrix[0][0] == 'X' && matrix[0][1] == 'X' && matrix[0][2] == 'X'){
+        favorX = 1;
+    }
+    else if (matrix[1][0] == 'X' && matrix[1][1] == 'X' && matrix[1][2] == 'X'){
+        favorX = 1;
+    }
+    else if (matrix[2][0] == 'X' && matrix[2][1] == 'X' && matrix[2][2] == 'X'){
+        favorX = 1;
+    }
+    else if (matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][2] == 'X'){
+        favorX = 1;
+    }
+    else if (matrix[2][0] == 'X' && matrix[1][1] == 'X' && matrix[0][2] == 'X'){
+        favorX = 1;
+    }
+    else if (matrix[0][0] == 'X' && matrix[1][0] == 'X' && matrix[2][0] == 'X'){
+        favorX = 1;
+    }
+    else if (matrix[0][1] == 'X' && matrix[1][1] == 'X' && matrix[2][1] == 'X'){
+        favorX = 1;
+    }
+    else if (matrix[0][2] == 'X' && matrix[1][2] == 'X' && matrix[2][2] == 'X'){
+        favorX = 1;
+    }
+    else {
+        favorX = 0;
     }
 
+        return favorX == 1;
+                            }
+
     public Boolean isInFavorOfO() {
-        return '0' >= 'X';
+        //test to see if O has won.
+        //looking for three O's in a row.
+
+        int favorO = 0;
+        if (matrix[0][0] == 'O' && matrix[0][1] == 'O' && matrix[0][2] == 'O'){
+            favorO = 1;
+        }
+        else if (matrix[1][0] == 'O' && matrix[1][1] == 'O' && matrix[1][2] == 'O'){
+            favorO = 1;
+        }
+        else if (matrix[2][0] == 'O' && matrix[2][1] == 'O' && matrix[2][2] == 'O'){
+            favorO = 1;
+        }
+        else if (matrix[0][0] == 'O' && matrix[1][1] == 'O' && matrix[2][2] == 'O'){
+            favorO = 1;
+        }
+        else if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O'){
+            favorO = 1;
+        }
+        else if (matrix[0][0] == 'O' && matrix[1][0] == 'O' && matrix[2][0] == 'O'){
+            favorO = 1;
+        }
+        else if (matrix[0][1] == 'O' && matrix[1][1] == 'O' && matrix[2][1] == 'O'){
+            favorO = 1;
+        }
+        else if (matrix[0][2] == 'O' && matrix[1][2] == 'O' && matrix[2][2] == 'O'){
+            favorO = 1;
+        }
+        else {
+            favorO = 0;
+        }
+
+        return favorO == 1;
     }
 
     public Boolean isTie() {
-        return 'X' != '0';
+        // test to see if neither won.
+        int favorOX = 0;
+        if (matrix[0][0] == 'O' && matrix[0][1] == 'O' && matrix[0][2] == 'O' ||
+                matrix[0][0] == 'X' && matrix[0][1] == 'X' && matrix[0][2] == 'X'){
+            favorOX = 1;
+        }
+        else if (matrix[1][0] == 'O' && matrix[1][1] == 'O' && matrix[1][2] == 'O' ||
+                matrix[1][0] == 'X' && matrix[1][1] == 'X' && matrix[1][2] == 'X'){
+            favorOX = 1;
+        }
+        else if (matrix[2][0] == 'O' && matrix[2][1] == 'O' && matrix[2][2] == 'O' ||
+                matrix[2][0] == 'X' && matrix[2][1] == 'X' && matrix[2][2] == 'X'){
+            favorOX = 1;
+        }
+        else if (matrix[0][0] == 'O' && matrix[1][1] == 'O' && matrix[2][2] == 'O' ||
+                matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][2] == 'X'){
+            favorOX = 1;
+        }
+        else if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O' ||
+                matrix[2][0] == 'X' && matrix[1][1] == 'X' && matrix[0][2] == 'X'){
+            favorOX = 1;
+        }
+        else if (matrix[0][0] == 'O' && matrix[1][0] == 'O' && matrix[2][0] == 'O' ||
+                matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][0] == 'X'){
+            favorOX = 1;
+        }
+        else if (matrix[0][1] == 'O' && matrix[1][1] == 'O' && matrix[2][1] == 'O' ||
+                matrix[0][1] == 'X' && matrix[1][1] == 'X' && matrix[2][1] == 'X'){
+            favorOX = 1;
+        }
+        else if (matrix[0][2] == 'O' && matrix[1][2] == 'O' && matrix[2][2] == 'O' ||
+                matrix[0][2] == 'X' && matrix[1][2] == 'X' && matrix[2][2] == 'X'){
+            favorOX = 1;
+        }
+        else {
+            favorOX = 0;
+        }
+
+        return favorOX == 0;
     }
 
     public String getWinner() {
-        return "";
+        Character [] [] ticTacToe1 = new Character [3][3];
+        ticTacToe1 [0][0] = 'O'; ticTacToe1 [0][1] = 'O'; ticTacToe1 [0][2] = 'O';
+        //String result =
+        return "" ;
     }
 
 }
