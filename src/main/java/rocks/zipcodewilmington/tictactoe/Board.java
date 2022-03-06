@@ -5,7 +5,7 @@ package rocks.zipcodewilmington.tictactoe;
  */
 public class Board {
 
-    Character [][] matrix;
+    Character[][] matrix;
 
     public Board(Character[][] matrix) {
         this.matrix = matrix;
@@ -14,68 +14,52 @@ public class Board {
     public Boolean isInFavorOfX() {
         //looking for three x's in a row.
 
-    int favorX = 0;
-    if (matrix[0][0] == 'X' && matrix[0][1] == 'X' && matrix[0][2] == 'X'){
-        favorX = 1;
-    }
-    else if (matrix[1][0] == 'X' && matrix[1][1] == 'X' && matrix[1][2] == 'X'){
-        favorX = 1;
-    }
-    else if (matrix[2][0] == 'X' && matrix[2][1] == 'X' && matrix[2][2] == 'X'){
-        favorX = 1;
-    }
-    else if (matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][2] == 'X'){
-        favorX = 1;
-    }
-    else if (matrix[2][0] == 'X' && matrix[1][1] == 'X' && matrix[0][2] == 'X'){
-        favorX = 1;
-    }
-    else if (matrix[0][0] == 'X' && matrix[1][0] == 'X' && matrix[2][0] == 'X'){
-        favorX = 1;
-    }
-    else if (matrix[0][1] == 'X' && matrix[1][1] == 'X' && matrix[2][1] == 'X'){
-        favorX = 1;
-    }
-    else if (matrix[0][2] == 'X' && matrix[1][2] == 'X' && matrix[2][2] == 'X'){
-        favorX = 1;
-    }
-    else {
-        favorX = 0;
-    }
+        int favorX = 0;
+        if (matrix[0][0] == 'X' && matrix[0][1] == 'X' && matrix[0][2] == 'X') {
+            favorX = 1;
+        } else if (matrix[1][0] == 'X' && matrix[1][1] == 'X' && matrix[1][2] == 'X') {
+            favorX = 1;
+        } else if (matrix[2][0] == 'X' && matrix[2][1] == 'X' && matrix[2][2] == 'X') {
+            favorX = 1;
+        } else if (matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][2] == 'X') {
+            favorX = 1;
+        } else if (matrix[2][0] == 'X' && matrix[1][1] == 'X' && matrix[0][2] == 'X') {
+            favorX = 1;
+        } else if (matrix[0][0] == 'X' && matrix[1][0] == 'X' && matrix[2][0] == 'X') {
+            favorX = 1;
+        } else if (matrix[0][1] == 'X' && matrix[1][1] == 'X' && matrix[2][1] == 'X') {
+            favorX = 1;
+        } else if (matrix[0][2] == 'X' && matrix[1][2] == 'X' && matrix[2][2] == 'X') {
+            favorX = 1;
+        } else {
+            favorX = 0;
+        }
 
         return favorX == 1;
-                            }
+    }
 
     public Boolean isInFavorOfO() {
         //test to see if O has won.
         //looking for three O's in a row.
 
         int favorO = 0;
-        if (matrix[0][0] == 'O' && matrix[0][1] == 'O' && matrix[0][2] == 'O'){
+        if (matrix[0][0] == 'O' && matrix[0][1] == 'O' && matrix[0][2] == 'O') {
             favorO = 1;
-        }
-        else if (matrix[1][0] == 'O' && matrix[1][1] == 'O' && matrix[1][2] == 'O'){
+        } else if (matrix[1][0] == 'O' && matrix[1][1] == 'O' && matrix[1][2] == 'O') {
             favorO = 1;
-        }
-        else if (matrix[2][0] == 'O' && matrix[2][1] == 'O' && matrix[2][2] == 'O'){
+        } else if (matrix[2][0] == 'O' && matrix[2][1] == 'O' && matrix[2][2] == 'O') {
             favorO = 1;
-        }
-        else if (matrix[0][0] == 'O' && matrix[1][1] == 'O' && matrix[2][2] == 'O'){
+        } else if (matrix[0][0] == 'O' && matrix[1][1] == 'O' && matrix[2][2] == 'O') {
             favorO = 1;
-        }
-        else if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O'){
+        } else if (matrix[2][0] == 'O' && matrix[1][1] == 'O' && matrix[0][2] == 'O') {
             favorO = 1;
-        }
-        else if (matrix[0][0] == 'O' && matrix[1][0] == 'O' && matrix[2][0] == 'O'){
+        } else if (matrix[0][0] == 'O' && matrix[1][0] == 'O' && matrix[2][0] == 'O') {
             favorO = 1;
-        }
-        else if (matrix[0][1] == 'O' && matrix[1][1] == 'O' && matrix[2][1] == 'O'){
+        } else if (matrix[0][1] == 'O' && matrix[1][1] == 'O' && matrix[2][1] == 'O') {
             favorO = 1;
-        }
-        else if (matrix[0][2] == 'O' && matrix[1][2] == 'O' && matrix[2][2] == 'O'){
+        } else if (matrix[0][2] == 'O' && matrix[1][2] == 'O' && matrix[2][2] == 'O') {
             favorO = 1;
-        }
-        else {
+        } else {
             favorO = 0;
         }
 
@@ -84,7 +68,13 @@ public class Board {
 
     public Boolean isTie() {
         // test to see if neither won.
-        int favorOX = 0;
+        if (isInFavorOfO() || isInFavorOfX()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+/*        int favorOX = 0;
         if (matrix[0][0] == 'O' && matrix[0][1] == 'O' && matrix[0][2] == 'O' ||
                 matrix[0][0] == 'X' && matrix[0][1] == 'X' && matrix[0][2] == 'X'){
             favorOX = 1;
@@ -106,7 +96,7 @@ public class Board {
             favorOX = 1;
         }
         else if (matrix[0][0] == 'O' && matrix[1][0] == 'O' && matrix[2][0] == 'O' ||
-                matrix[0][0] == 'X' && matrix[1][1] == 'X' && matrix[2][0] == 'X'){
+                matrix[0][0] == 'X' && matrix[1][0] == 'X' && matrix[2][0] == 'X'){
             favorOX = 1;
         }
         else if (matrix[0][1] == 'O' && matrix[1][1] == 'O' && matrix[2][1] == 'O' ||
@@ -122,10 +112,21 @@ public class Board {
         }
 
         return favorOX == 0;
+    }*/
+
+        public String getWinner () {
+            //one or the other has to get 3 in a row to win the game.
+            //display the winner in string format
+            String result = "";
+            if (isInFavorOfO()) {
+                return "O";
+            } else if (isInFavorOfX()) {
+                return "X";
+            } else {
+                return "";
+            }
+
+        }
     }
 
-    public String getWinner() {
-        //one or the other has to get 3 in a row to win the game.
-    }
 
-}
